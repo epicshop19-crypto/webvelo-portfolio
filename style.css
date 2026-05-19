@@ -671,7 +671,34 @@ footer {
 .footer-bottom p { font-size: 0.9rem; color: var(--text3); }
 .footer-bottom span { color: var(--text); font-weight: 600; }
 
-/* SCROLL REVEAL */
+/* SCROLL TO TOP */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 48px; height: 48px;
+  background: var(--text);
+  color: white;
+  border: none; border-radius: 12px;
+  font-size: 1.2rem; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+.scroll-top-btn.visible {
+  opacity: 1; transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top-btn:hover {
+  background: var(--accent2);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
+
 .reveal {
   opacity: 0; transform: translateY(40px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);

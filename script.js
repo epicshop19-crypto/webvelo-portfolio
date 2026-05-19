@@ -54,3 +54,12 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 const statsSection = document.querySelector('.hero-stats');
 if (statsSection) statsObserver.observe(statsSection);
+
+// SCROLL TO TOP BUTTON
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
